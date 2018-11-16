@@ -33,7 +33,7 @@ test:
     - pycocotools
     - pycocotools.mask
     - pycocotools.coco
-    - pycocotools.cocoeval
+    #- pycocotools.cocoeval
 
 about:
   home: https://github.com/cocodataset/cocoapi
