@@ -29,9 +29,10 @@ requirements:
     - setuptools
     - cython
     - matplotlib-base
+    - numpy >=1.19
   run:
     - python
-    - numpy
+    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
