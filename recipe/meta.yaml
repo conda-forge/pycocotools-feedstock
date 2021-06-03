@@ -24,6 +24,7 @@ requirements:
     - cython
     - matplotlib-base
   run:
+    - python
     - numpy
 
 test:
