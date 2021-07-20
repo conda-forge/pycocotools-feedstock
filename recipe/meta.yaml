@@ -10,12 +10,16 @@ source:
   sha256: 24717a12799b4471c2e54aa210d642e6cd4028826a1d49fcc2b0e3497e041f1a
 
 build:
-  number: 1
+  number: 2
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv
   skip: true  # [win]
 
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - cython                                 # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
   host:
     - python
@@ -23,17 +27,17 @@ requirements:
     - setuptools
     - cython
     - matplotlib-base
+    - numpy
   run:
     - python
     - cython
     - matplotlib-base
+    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
     - pycocotools
     - pycocotools.mask
-    #- pycocotools.coco
-    #- pycocotools.cocoeval
 
 about:
   home: https://github.com/cocodataset/cocoapi
@@ -47,3 +51,4 @@ about:
 extra:
   recipe-maintainers:
     - hadim
+    - erykoff
