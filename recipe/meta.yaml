@@ -1,5 +1,5 @@
 {% set name = "pycocotools" %}
-{% set version = "2.0.6" %}
+{% set version = "2.0.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7fe089b05cc18e806dcf3bd764708d86dab922a100f3734eb77fb77a70a1d18c
+  sha256: da8b7815196eebf0adabf67fcc459126cbc6498bbc6ab1fd144c371465d86879
 
 build:
-  number: 2
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv
 
 requirements:
