@@ -10,7 +10,7 @@ source:
   sha256: da8b7815196eebf0adabf67fcc459126cbc6498bbc6ab1fd144c371465d86879
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv
 
 requirements:
@@ -32,7 +32,6 @@ requirements:
     - python
     - cython
     - matplotlib-base
-    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
