@@ -1,18 +1,16 @@
-{% set name = "pycocotools" %}
 {% set version = "2.0.8" %}
 
 package:
-  name: {{ name|lower }}
+  name: pycocotools
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/p/pycocotools/pycocotools-{{ version }}.tar.gz
   sha256: 8f2bcedb786ba26c367a3680f9c4eb5b2ad9dccb2b34eaeb205e0a021e1dfb8d
 
 build:
-  number: 1
+  number: 2
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv
-  skip: true  # [py<39]
 
 requirements:
   build:
@@ -27,26 +25,28 @@ requirements:
     - pip
     - setuptools
     - cython
-    - matplotlib-base
     - numpy
   run:
     - python
-    - cython
     - matplotlib-base
 
 test:
+  requires:
+    - pip
+  commands:
+    - pip check
   imports:
     - pycocotools
     - pycocotools.mask
 
 about:
-  home: https://github.com/cocodataset/cocoapi
+  home: https://github.com/ppwwyyxx/cocoapi
   license: BSD-3-Clause
   license_family: BSD
   license_file: license.txt
   summary: Library to work with COCO dataset.
   doc_url: http://cocodataset.org
-  dev_url: https://github.com/cocodataset/cocoapi
+  dev_url: https://github.com/ppwwyyxx/cocoapi
 
 extra:
   recipe-maintainers:
