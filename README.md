@@ -3,13 +3,13 @@ About pycocotools-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pycocotools-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/cocodataset/cocoapi
+Home: https://github.com/ppwwyyxx/cocoapi
 
 Package license: BSD-3-Clause
 
 Summary: Library to work with COCO dataset.
 
-Development: https://github.com/cocodataset/cocoapi
+Development: https://github.com/ppwwyyxx/cocoapi
 
 Documentation: http://cocodataset.org
 
