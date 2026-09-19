@@ -5,11 +5,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/p/pycocotools/pycocotools-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/p/pycocotools/pycocotools-{{ version }}.tar.gz
   sha256: 34254d76da85576fcaf5c1f3aa9aae16b8cb15418334ba4283b800796bd1993d
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv
 
 requirements:
